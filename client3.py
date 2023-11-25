@@ -36,6 +36,10 @@ def getDataPoint(quote):
     bid_price = float(quote['top_bid']['price'])
     ask_price = float(quote['top_ask']['price'])
     price = float((bid_price+ask_price)/2)
+
+    if bid_price < 0 or ask_price < 0:
+        return
+
     return stock, bid_price, ask_price, price
 
 
